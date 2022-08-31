@@ -1,6 +1,11 @@
 .tasks {
   margin-bottom: 10px;
 
+  &__container {
+    height: 250px;
+    overflow: auto;
+  }
+
   &__title {
     margin-bottom: 28px; 
   }

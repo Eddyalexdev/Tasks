@@ -2,6 +2,7 @@ import styles from './Base.module.scss';
 import Header from './components/Header';
 import ButtonAdd from './components/ButtonAdd';
 import PendingTasks from './components/PendingTasks';
+import CompletedTasks from './components/CompletedTasks';
 
 function App() {
   const tasks = 0;
@@ -15,6 +16,7 @@ function App() {
             <ButtonAdd>+ Agregar Nueva</ButtonAdd>
           </div>
           <PendingTasks />
+          <CompletedTasks />
         </div>
         <div className={styles.main__right}>
           <span>Comments and Notifications part</span>

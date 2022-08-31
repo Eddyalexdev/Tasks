@@ -1,19 +1,25 @@
 import styles from './Task.module.scss';
 
 interface ITask {
-  id: number,
-  task: string
+  task: {
+    id: number,
+    name: string,
+    state: "pending" | "progress" | "completed",
+    difficult: "minor" | "normal" | "critical"
+  }
 }
 
-const Task = () => {
+const Task = ({ task }: ITask) => {
+  const { name, state, difficult } = task;
+
   return (
     <div className={styles.task}>
       <label className={styles.task__container}>
         <input type="checkbox" className={styles.task__check}/>
-        <h3 className={styles.task__title}>Task 1</h3>
+        <h3 className={styles.task__title}>{name}</h3>
       </label>
-      <span className={`${styles.task__state} completed`}>State</span>
-      <span className={styles.task__difficult}>Difficult</span>
+      <span className={styles[state]}>{state}</span>
+      <span className={styles[difficult]}> {difficult} </span>
       <div>
         Colaborators
       </div>

@@ -24,21 +24,6 @@
     background-color: rgba(#323232, 20%);
     color: #FFFFFF;
     font-weight: 400;
-
-    & .pending {
-      background-color: rgba(#F2994A, 20%);
-      color: #F2994A;
-    }
-
-    & .completed {
-      background-color: rgba(#27AE60, 20%);
-      color: #27AE60;
-    }
-
-    & .progress {
-      background-color: rgba(#56CCF2, 20%);
-      color: #56CCF2;
-    }
   }
 
   &__difficult {
@@ -75,3 +60,41 @@
   }
 }
 
+.pending {
+  composes: task__state;
+  background-color: rgba(#F2994A, 20%);
+  color: #F2994A;
+}
+
+.completed {
+  composes: task__state;
+  background-color: rgba(#27AE60, 20%);
+  color: #27AE60;
+}
+
+.progress {
+  composes: task__state;
+  background-color: rgba(#56CCF2, 20%);
+  color: #56CCF2;
+}
+
+.minor {
+  composes: task__difficult;
+  &::before {
+    border-color: #219653; 
+  }
+}
+
+.normal {
+  composes: task__difficult;
+  &::before {
+    border-color: #F2C94C;
+  }
+}
+
+.critical {
+  composes: task__difficult;
+  &::before {
+    border-color: #EB5757;
+  }
+}
